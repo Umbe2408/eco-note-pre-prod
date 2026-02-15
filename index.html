@@ -5,16 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoNote PRE PRODUZIONE</title>
     <style>
-        body { font-family: -apple-system, system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #e8f5e9; color: #2e7d32; }
-        .card { background: white; padding: 2.5rem; border-radius: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; max-width: 350px; width: 90%; }
-        .icon { width: 80px; height: 80px; background: #4caf50; border-radius: 22px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: bold; }
-        h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: #1b5e20; }
-        p { color: #666; margin-bottom: 2rem; line-height: 1.5; font-size: 0.95rem; }
-        .btn { display: block; padding: 14px; background: #4caf50; color: white; text-decoration: none; border-radius: 15px; font-weight: 600; margin-bottom: 1rem; transition: transform 0.2s; }
-        .btn:active { transform: scale(0.98); }
-        .store-links { border-top: 1px solid #eee; padding-top: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 12px; }
-        .store-btn { color: #4caf50; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-        .footer-note { font-size: 0.75rem; color: #999; margin-top: 1rem; }
+        body { 
+            font-family: -apple-system, system-ui, sans-serif; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+            background: #FFFFFF; /* light background */ 
+            color: #0F172A; /* text color */ 
+        }
+
+        .card { 
+            background: #f1f5f9; /* card background */ 
+            padding: 2.5rem; 
+            border-radius: 30px; 
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08); /* card shadow */ 
+            text-align: center; 
+            max-width: 350px; 
+            width: 90%; 
+        }
+
+        .icon { 
+            width: 80px; 
+            height: 80px; 
+            background: #64748B; /* icon background */ 
+            border-radius: 22px; 
+            margin: 0 auto 1.5rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #FFFFFF; 
+            font-size: 40px; 
+            font-weight: bold; 
+        }
+
+        h1 { 
+            font-size: 1.6rem; 
+            margin-bottom: 0.5rem; 
+            color: #0F172A; /* main text */ 
+        }
+
+        p { 
+            color: #475569; /* secondary text */ 
+            margin-bottom: 2rem; 
+            line-height: 1.5; 
+            font-size: 0.95rem; 
+        }
+
+        .btn { 
+            display: block; 
+            padding: 14px; 
+            background: #006FEE; /* button color */ 
+            color: #FFFFFF; 
+            text-decoration: none; 
+            border-radius: 15px; 
+            font-weight: 600; 
+            margin-bottom: 1rem; 
+            transition: transform 0.2s; 
+        }
+
+        .btn:active { 
+            transform: scale(0.98); 
+        }
+
+        .store-links { 
+            border-top: 1px solid #E5E7EB; 
+            padding-top: 1.5rem; 
+            margin-top: 1rem; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+        }
+
+        .store-btn { 
+            color: #006FEE; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+        }
+
+        .footer-note { 
+            font-size: 0.75rem; 
+            color: #94A3B8; /* subtle note text */ 
+            margin-top: 1rem; 
+        }
     </style>
 </head>
 <body>
@@ -29,7 +104,7 @@
     <div class="store-links">
         <span>Non hai l'app? Scaricala ora:</span>
         <a href="https://apps.apple.com/app/econote" class="store-btn">App Store (iOS)</a>
-        <a href="https://expo.dev/accounts/umbe24893/projects/econote-offline/builds/be453333-81f9-4794-adad-4b1c68b2b672" class="store-btn">Play Store (Android)</a>
+        <a href="https://www.google.it" class="store-btn">Play Store (Android)</a>
     </div>
     <div class="footer-note">100% Privata • 100% Offline</div>
 </div>
@@ -40,12 +115,9 @@
     const e = urlParams.get('e');
 
     if (v) {
-        // Construct the custom protocol link
         const protocolUrl = `econote://share?v=${v}${e ? '&e=' + e : ''}`;
         const openBtn = document.getElementById('openBtn');
         openBtn.href = protocolUrl;
-
-        // Auto-attempt redirect
         window.location.href = protocolUrl;
 
         setTimeout(() => {
